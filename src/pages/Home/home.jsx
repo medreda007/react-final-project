@@ -1,22 +1,14 @@
-
-import Header from '../../layouts/Header';
 import React, { useContext, useEffect, useState } from 'react';
 import "../Home/home.scss"
-import { Footer } from '../../layouts/Footer';
+import { FirstSection } from './components/HomeFirstSection';
 
 
 
 export const HomePage = () => {
 
-    
-
-
-
     return (
-
         <>
-            <Header />
-            <Footer/>
+            <FirstSection/>
         </>
     );
 }

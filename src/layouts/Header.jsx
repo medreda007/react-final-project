@@ -1,8 +1,9 @@
 import { Navbar } from 'flowbite-react';
 import { Link } from 'react-router-dom';
 import React, { useContext, useState } from 'react';
-
-
+import "./Header.scss";
+import profilImg from "../assets/img/icon-header-01.png"
+import bagImg from "../assets/img/icon-header-02.png"
 
 
 
@@ -10,24 +11,29 @@ import React, { useContext, useState } from 'react';
 
 const Header = () => {
 
+
+
     return (
         <>
-            <Navbar fluid rounded>
-                <Navbar.Brand as={Link} href="https://flowbite-react.com">
-                    <img src="/favicon.svg" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
+            <Navbar fluid rounded className={"p-5 navbar w-full  "}>
+                <Navbar.Brand as={Link} href="https://flowbite-react.com" className={""}>
                     <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite React</span>
                 </Navbar.Brand>
                 <Navbar.Toggle />
-                <Navbar.Collapse>
-                    <Navbar.Link href="#" active>
+                <Navbar.Collapse className={"navbar-inner"}>
+                    <Link className='mt-2' to={"/"} active>
                         Home
-                    </Navbar.Link>
-                    <Navbar.Link as={Link} href="#">
+                    </Link>
+                    <Link className='mt-2' as={Link} to={"/About"}>
                         About
-                    </Navbar.Link>
-                    <Navbar.Link href="#">Services</Navbar.Link>
-                    <Navbar.Link href="#">Pricing</Navbar.Link>
-                    <Navbar.Link href="#">Contact</Navbar.Link>
+                    </Link>
+                    <Link className='mt-2' href="#">Services</Link>
+                    <Link className='mt-2' href="">Pricing</Link>
+                    <Link className='mt-2' to={'/Contact'}>Contact</Link>
+                    <div className="navbar-end">
+                        <Navbar.Link href="#"><img src={profilImg} className='h-8 mt-1' alt="" /></Navbar.Link>
+                        <Navbar.Link href="#"><img src={bagImg} className='h-8' alt="" /></Navbar.Link>
+                    </div>
                 </Navbar.Collapse>
             </Navbar>
         </>
