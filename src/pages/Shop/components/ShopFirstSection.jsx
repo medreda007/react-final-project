@@ -51,10 +51,10 @@ export const ShopFirstSection = () => {
             <div className="bg-blue-gray-300 h-[35vh]" style={{ backgroundImage: `url(${bannerImg})`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover" }}>
                 <div className="w-full h-full flex items-center justify-center text-5xl bg-[#00000092] text-white">Products</div>
             </div>
-            <div className="flex p-7 gap-7">
+            <div className="flex p-7 gap-7 lg:flex-row flex-col">
                 <div className="lg:w-[25vw]">
-                    <div className="flex flex-col bg-blue-gray-400 lg:items-center lg:ps-0 ps-10 pt-10 gap-y-16">
-                        <div className="flex flex-col lg:me-8 lg:py-4 w-40">
+                    <div className="flex flex-col lg:items-center lg:ps-0 ps-10 pt-10 gap-y-16">
+                        <div className="flex flex-col lg:me-8 lg:py-4 w-40 lg:gap-0 gap-5">
                             <h1 className='pb-4 font-semibold text-xl'>Categories</h1>
                             <button onClick={() => { showProduct("protein") }} className='w-fit'>Protein</button>
                             <button onClick={() => { showProduct("energy") }} className='w-fit'>Energy boosters</button>
@@ -63,7 +63,7 @@ export const ShopFirstSection = () => {
                             <button onClick={() => { showProduct("gymWear") }} className='w-fit'>Gym Wear</button>
                             <button onClick={() => { showProduct("workoutGear") }} className='w-fit'>Workout Gear</button>
                         </div>
-                        <div className="flex flex-col lg:me-8 lg:py-4 w-40">
+                        <div className="flex flex-col lg:me-8 lg:py-4 w-40 lg:gap-0 gap-5">
                             <h1 className='pb-4 font-semibold text-xl'>Price</h1>
                             <div className="flex items-center gap-2">
                                 <Radio onClick={() => { showProductPrice1(3000) }} id="united-state" name="price" value="1000-3000" defaultChecked />
@@ -76,7 +76,7 @@ export const ShopFirstSection = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-wrap">
+                <div className="flex flex-wrap lg:w-[75vw] gap-5 justify-center py-14   ">
                     {showedProducts.map((item, index) => (
                         <div className="flex" key={index}>
                             <Card className="w-80 h-96">
