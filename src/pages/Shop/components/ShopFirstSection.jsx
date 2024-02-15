@@ -2,17 +2,29 @@ import React, { useContext, useState, useEffect } from 'react';
 import bannerImg from "../../../assets/img/workout-supplements-that-work_lead.avif";
 import { MyContext } from '../../../utils/contextProvider';
 import {
-    Card,
+    
+    DialogHeader,
+    Dialog,
+    DialogBody,
+    DialogFooter,
     CardHeader,
     CardBody,
-    CardFooter,
     Typography,
-    Button,
+    CardFooter,
 } from "@material-tailwind/react";
-import { Label, Radio } from 'flowbite-react';
+
+import { Button, Card, Label, Radio } from 'flowbite-react';
 
 export const ShopFirstSection = () => {
-    const [allProducts] = useContext(MyContext);
+    
+    const [allProducts, setAllProducts, newProd, setNewProd, onSales, setOnSales, bestSeller, setBestSeller, cart, setCart] = useContext(MyContext)
+
+    const [size, setSize] = useState(null);
+
+    const handleOpen = (value) => setSize(value);
+
+
+
     const [showedProducts, setShowedProducts] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState(null);
 
@@ -45,6 +57,22 @@ export const ShopFirstSection = () => {
         }
         setShowedProducts(filteredArray);
     };
+
+
+    const addToCart2 = (index) => {
+        let prodAdded
+        prodAdded = showedProducts[index]
+
+        const isAlreadyInCart = cart.some(item => item.name === prodAdded.name);
+
+        if (!isAlreadyInCart) {
+            prodAdded.quantity++
+            cart.push(prodAdded)
+        } else {
+            prodAdded.quantity++
+        }
+        handleOpen("xs")
+    }
 
     return (
         <>
@@ -102,6 +130,7 @@ export const ShopFirstSection = () => {
                                 </CardBody>
                                 <CardFooter className="pt-0">
                                     <Button
+                                        onClick={() => addToCart2(index)}
                                         ripple={false}
                                         fullWidth={true}
                                         className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
@@ -114,6 +143,26 @@ export const ShopFirstSection = () => {
                     ))}
                 </div>
             </div>
+            <Dialog
+                open={
+                    size === "xs"
+                }
+                size={size || "md"}
+                handler={handleOpen}
+            >
+                <DialogHeader className='flex text-center'>Product added to cart successfuly</DialogHeader>
+                <DialogBody className='flex justify-center pb-20'>
+                    <div class="svg-container">
+                        <svg class="ft-green-tick" xmlns="http://www.w3.org/2000/svg" height="100" width="100" viewBox="0 0 48 48" aria-hidden="true">
+                            <circle class="circle" fill="#5bb543" cx="24" cy="24" r="22" />
+                            <path class="tick" fill="none" stroke="#FFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M14 27l5.917 4.917L34 17" />
+                        </svg>
+                    </div>
+                </DialogBody>
+                <DialogFooter className='flex justify-center'>
+                    <Button onClick={() => handleOpen(null)} className='bg-black w-1/2 rounded-full py-4 text-[14px]'>OK</Button>
+                </DialogFooter>
+            </Dialog>
         </>
     );
 };

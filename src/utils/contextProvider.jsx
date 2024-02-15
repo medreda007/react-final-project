@@ -49,14 +49,16 @@ export const MyProvider = ({ children }) => {
         name: "Protein 1",
         price: 1000,
         image: protein1,
-        type: "protein"
+        type: "protein",
+        quantity: 0,
     }
     let proteinProd2 = {
         id: 2,
         name: "Protein 2",
         price: 2000,
         image: protein2,
-        type: "protein"
+        type: "protein",
+        quantity: 0,
     }
     let proteinProd3 = {
         id: 3,
@@ -64,13 +66,15 @@ export const MyProvider = ({ children }) => {
         price: 3000,
         image: protein3,
         type: "protein",
+        quantity: 0,
     }
     let proteinProd4 = {
         id: 4,
         name: "Protein 4",
         price: 4000,
         image: protein4,
-        type: "protein"
+        type: "protein",
+        quantity: 0,
     }
     let proteinProd5 = {
         id: 5,
@@ -78,6 +82,7 @@ export const MyProvider = ({ children }) => {
         price: 5000,
         image: protein5,
         type: "protein",
+        quantity: 0,
     }
 
 
@@ -88,35 +93,40 @@ export const MyProvider = ({ children }) => {
         name: "Energy 1",
         price: 1000,
         image: energy1,
-        type: "energy"
+        type: "energy",
+        quantity: 0,
     }
     let energyProd2 = {
         id: 2,
         name: "Energy 2",
         price: 2000,
         image: energy2,
-        type: "energy"
+        type: "energy",
+        quantity: 0,
     }
     let energyProd3 = {
         id: 3,
         name: "Energy 3",
         price: 3000,
         image: energy3,
-        type: "energy"
+        type: "energy",
+        quantity: 0,
     }
     let energyProd4 = {
         id: 4,
         name: "Energy 4",
         price: 4000,
         image: energy4,
-        type: "energy"
+        type: "energy",
+        quantity: 0,
     }
     let energyProd5 = {
         id: 5,
         name: "Energy 5",
         price: 5000,
         image: energy5,
-        type: "energy"
+        type: "energy",
+        quantity: 0,
     }
 
 
@@ -127,35 +137,40 @@ export const MyProvider = ({ children }) => {
         name: "Health 1",
         price: 1000,
         image: health1,
-        type: "health"
+        type: "health",
+        quantity: 0,
     }
     let healthProd2 = {
         id: 2,
         name: "Health 2",
         price: 2000,
         image: health2,
-        type: "health"
+        type: "health",
+        quantity: 0,
     }
     let healthProd3 = {
         id: 3,
         name: "Health 3",
         price: 3000,
         image: health3,
-        type: "health"
+        type: "health",
+        quantity: 0,
     }
     let healthProd4 = {
         id: 4,
         name: "Health 4",
         price: 4000,
         image: health4,
-        type: "health"
+        type: "health",
+        quantity: 0,
     }
     let healthProd5 = {
         id: 5,
         name: "Health 5",
         price: 5000,
         image: health5,
-        type: "health"
+        type: "health",
+        quantity: 0,
     }
 
 
@@ -167,35 +182,40 @@ export const MyProvider = ({ children }) => {
         name: "Snacks 1",
         price: 1000,
         image: snack1,
-        type: "snacks"
+        type: "snacks",
+        quantity: 0,
     }
     let snacksProd2 = {
         id: 2,
         name: "Snacks 2",
         price: 2000,
         image: snack2,
-        type: "snacks"
+        type: "snacks",
+        quantity: 0,
     }
     let snacksProd3 = {
         id: 3,
         name: "Snacks 3",
         price: 3000,
         image: snack3,
-        type: "snacks"
+        type: "snacks",
+        quantity: 0,
     }
     let snacksProd4 = {
         id: 4,
         name: "Snacks 4",
         price: 4000,
         image: snack4,
-        type: "snacks"
+        type: "snacks",
+        quantity: 0,
     }
     let snacksProd5 = {
         id: 5,
         name: "Snacks 5",
         price: 5000,
         image: snack5,
-        type: "snacks"
+        type: "snacks",
+        quantity: 0,
     }
 
     // ^^ gymWear
@@ -204,35 +224,40 @@ export const MyProvider = ({ children }) => {
         name: "Gym Wear 1",
         price: 1000,
         image: gymwear1,
-        type: "gymWear"
+        type: "gymWear",
+        quantity: 0,
     }
     let gymWearProd2 = {
         id: 2,
         name: "Gym Wear 2",
         price: 2000,
         image: gymwear2,
-        type: "gymWear"
+        type: "gymWear",
+        quantity: 0,
     }
     let gymWearProd3 = {
         id: 3,
         name: "Gym Wear 3",
         price: 3000,
         image: gymwear3,
-        type: "gymWear"
+        type: "gymWear",
+        quantity: 0,
     }
     let gymWearProd4 = {
         id: 4,
         name: "Gym Wear 4",
         price: 4000,
         image: gymwear4,
-        type: "gymWear"
+        type: "gymWear",
+        quantity: 0,
     }
     let gymWearProd5 = {
         id: 5,
         name: "Gym Wear 5",
         price: 5000,
         image: gymwear5,
-        type: "gymWear"
+        type: "gymWear",
+        quantity: 0,
     }
 
     //? workout GEAR
@@ -241,35 +266,40 @@ export const MyProvider = ({ children }) => {
         name: "Workout Gear 1",
         price: 1000,
         image: gear1,
-        type: "workoutGear"
+        type: "workoutGear",
+        quantity: 0,
     }
     let workoutGearProd2 = {
         id: 2,
         name: "Workout Gear 2",
         price: 2000,
         image: gear2,
-        type: "workoutGear"
+        type: "workoutGear",
+        quantity: 0,
     }
     let workoutGearProd3 = {
         id: 3,
         name: "Workout Gear 3",
         price: 3000,
         image: gear3,
-        type: "workoutGear"
+        type: "workoutGear",
+        quantity: 0,
     }
     let workoutGearProd4 = {
         id: 4,
         name: "Workout Gear 4",
         price: 4000,
         image: gear4,
-        type: "workoutGear"
+        type: "workoutGear",
+        quantity: 0,
     }
     let workoutGearProd5 = {
         id: 5,
         name: "Workout Gear 5",
         price: 5000,
         image: gear5,
-        type: "workoutGear"
+        type: "workoutGear",
+        quantity: 0,
     }
 
 

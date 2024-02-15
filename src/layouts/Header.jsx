@@ -31,8 +31,8 @@ const Header = () => {
                     </Link>
                     <Link className='mt-2' to={'/Contact'}>Contact</Link>
                     <div className="navbar-end">
-                        <Navbar.Link href="#"><img src={profilImg} className='h-8 mt-1' alt="" /></Navbar.Link>
-                        <Navbar.Link href="#"><img src={bagImg} className='h-8' alt="" /></Navbar.Link>
+                        <Link to={"#"}><img src={profilImg} className='h-8 mt-1' alt="" /></Link>
+                        <Link to={"/Cart"} className='z-30' ><img src={bagImg} className='h-8' alt="" /></Link>
                     </div>
                 </Navbar.Collapse>
             </Navbar>

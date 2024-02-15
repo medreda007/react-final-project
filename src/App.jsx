@@ -7,6 +7,7 @@ import { TheFooter } from './layouts/Footer';
 import { Contact } from './pages/contact/contact';
 import { About } from './pages/about/about';
 import { Shop } from './pages/Shop/Shop';
+import { Cart } from './pages/cart/Cart';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/Contact' element={<Contact/>} />
         <Route path='/About' element={<About/>} />
         <Route path='/Shop' element={<Shop />} />
+        <Route path='/Cart' element={<Cart/>} />
       </Routes >
       <TheFooter />
     </MyProvider>

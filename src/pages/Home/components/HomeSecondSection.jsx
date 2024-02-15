@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import "./HomeSecondSection.scss"
 import { MyContext } from '../../../utils/contextProvider';
 import { Tabs } from 'flowbite-react';
@@ -9,6 +9,10 @@ import {
     CardFooter,
     Typography,
     Button,
+    DialogHeader,
+    Dialog,
+    DialogBody,
+    DialogFooter,
 } from "@material-tailwind/react";
 
 
@@ -21,6 +25,30 @@ export const HomeSecondSection = () => {
     let theRandomProd = allProducts[getRandomInt(20)]
     console.log(theRandomProd);
 
+    const [size, setSize] = useState(null);
+
+    const handleOpen = (value) => setSize(value);
+
+    const addToCart = (arrayType, index) => {
+        let prodAdded
+        if (arrayType === "newProd") {
+            prodAdded = newProd[index]
+        } else if (arrayType === "onSales") {
+            prodAdded = onSales[index]
+        } else if (arrayType === "bestSeller") {
+            prodAdded = bestSeller[index]
+        }
+
+        const isAlreadyInCart = cart.some(item => item.name === prodAdded.name);
+        
+        if (!isAlreadyInCart) {
+            prodAdded.quantity++
+            cart.push(prodAdded)
+        } else {
+            prodAdded.quantity++
+        }
+        handleOpen("xs")
+    }
     return (
         <>
             <section className="flex justify-center pt-5">
@@ -48,12 +76,11 @@ export const HomeSecondSection = () => {
                                                     color="gray"
                                                     className="font-normal opacity-75"
                                                 >
-
                                                 </Typography>
                                             </CardBody>
                                             <CardFooter className="pt-0">
                                                 <Button
-                                                    ripple={false}
+                                                    onClick={() => addToCart("newProd", index)}
                                                     fullWidth={true}
                                                     className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
                                                 >
@@ -95,6 +122,7 @@ export const HomeSecondSection = () => {
                                             </CardBody>
                                             <CardFooter className="pt-0">
                                                 <Button
+                                                    onClick={() => addToCart("onSales", index)}
                                                     ripple={false}
                                                     fullWidth={true}
                                                     className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
@@ -132,11 +160,11 @@ export const HomeSecondSection = () => {
                                                     color="gray"
                                                     className="font-normal opacity-75"
                                                 >
-
                                                 </Typography>
                                             </CardBody>
                                             <CardFooter className="pt-0">
                                                 <Button
+                                                    onClick={() => addToCart("bestSeller", index)}
                                                     ripple={false}
                                                     fullWidth={true}
                                                     className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
@@ -167,6 +195,27 @@ export const HomeSecondSection = () => {
                     </div>
                 </div>
             </section>
+
+            <Dialog
+                open={
+                    size === "xs"
+                }
+                size={size || "md"}
+                handler={handleOpen}
+            >
+                <DialogHeader className='flex text-center'>Product added to cart successfuly</DialogHeader>
+                <DialogBody className='flex justify-center pb-20'>
+                    <div class="svg-container">
+                        <svg class="ft-green-tick" xmlns="http://www.w3.org/2000/svg" height="100" width="100" viewBox="0 0 48 48" aria-hidden="true">
+                            <circle class="circle" fill="#5bb543" cx="24" cy="24" r="22" />
+                            <path class="tick" fill="none" stroke="#FFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M14 27l5.917 4.917L34 17" />
+                        </svg>
+                    </div>
+                </DialogBody>
+                <DialogFooter className='flex justify-center'>
+                    <Button onClick={() => handleOpen(null)} className='bg-black w-1/2 rounded-full py-4 text-[14px]'>OK</Button>
+                </DialogFooter>
+            </Dialog>
         </>
     )
 };
