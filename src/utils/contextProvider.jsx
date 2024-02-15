@@ -48,105 +48,117 @@ export const MyProvider = ({ children }) => {
         id: 1,
         name: "Protein 1",
         price: 1000,
-        image: protein1
+        image: protein1,
+        type: "protein"
     }
     let proteinProd2 = {
         id: 2,
         name: "Protein 2",
         price: 2000,
-        image: protein2
+        image: protein2,
+        type: "protein"
     }
     let proteinProd3 = {
         id: 3,
         name: "Protein 3",
         price: 3000,
-        image: protein3
+        image: protein3,
+        type: "protein",
     }
     let proteinProd4 = {
         id: 4,
         name: "Protein 4",
         price: 4000,
-        image: protein4
+        image: protein4,
+        type: "protein"
     }
     let proteinProd5 = {
         id: 5,
         name: "Protein 5",
         price: 5000,
-        image: protein5
+        image: protein5,
+        type: "protein",
     }
 
-    const [proteinProducts, setProteinProducts] = useState([proteinProd1, proteinProd2, proteinProd3, proteinProd4, proteinProd5
-    ])
+
 
     // todo energy
     let energyProd1 = {
         id: 1,
         name: "Energy 1",
         price: 1000,
-        image: energy1
+        image: energy1,
+        type: "energy"
     }
     let energyProd2 = {
         id: 2,
         name: "Energy 2",
         price: 2000,
-        image: energy2
+        image: energy2,
+        type: "energy"
     }
     let energyProd3 = {
         id: 3,
         name: "Energy 3",
         price: 3000,
-        image: energy3
+        image: energy3,
+        type: "energy"
     }
     let energyProd4 = {
         id: 4,
         name: "Energy 4",
         price: 4000,
-        image: energy4
+        image: energy4,
+        type: "energy"
     }
     let energyProd5 = {
         id: 5,
         name: "Energy 5",
         price: 5000,
-        image: energy5
+        image: energy5,
+        type: "energy"
     }
-    const [energyProducts, setEnergyProducts] = useState([energyProd1, energyProd2, energyProd3, energyProd4, energyProd5,
-    ])
 
 
-// * health
+
+    // * health
     let healthProd1 = {
         id: 1,
         name: "Health 1",
         price: 1000,
-        image: health1
+        image: health1,
+        type: "health"
     }
     let healthProd2 = {
         id: 2,
         name: "Health 2",
         price: 2000,
-        image: health2
+        image: health2,
+        type: "health"
     }
     let healthProd3 = {
         id: 3,
         name: "Health 3",
         price: 3000,
-        image: health3
+        image: health3,
+        type: "health"
     }
     let healthProd4 = {
         id: 4,
         name: "Health 4",
         price: 4000,
-        image: health4
+        image: health4,
+        type: "health"
     }
     let healthProd5 = {
         id: 5,
         name: "Health 5",
         price: 5000,
-        image: health5
+        image: health5,
+        type: "health"
     }
 
 
-    const [healthProducts, setHealthProducts] = useState([healthProd1, healthProd2, healthProd3, healthProd4, healthProd5,])
 
 
     // ~~ snacks
@@ -154,121 +166,157 @@ export const MyProvider = ({ children }) => {
         id: 1,
         name: "Snacks 1",
         price: 1000,
-        image: snack1
+        image: snack1,
+        type: "snacks"
     }
     let snacksProd2 = {
         id: 2,
         name: "Snacks 2",
         price: 2000,
-        image: snack2
+        image: snack2,
+        type: "snacks"
     }
     let snacksProd3 = {
         id: 3,
         name: "Snacks 3",
         price: 3000,
-        image: snack3
+        image: snack3,
+        type: "snacks"
     }
     let snacksProd4 = {
         id: 4,
         name: "Snacks 4",
         price: 4000,
-        image: snack4
+        image: snack4,
+        type: "snacks"
     }
     let snacksProd5 = {
         id: 5,
         name: "Snacks 5",
         price: 5000,
-        image: snack5
+        image: snack5,
+        type: "snacks"
     }
-    const [snacksProducts, setSnacksProducts] = useState([snacksProd1, snacksProd2, snacksProd3, snacksProd4, snacksProd5,])
 
     // ^^ gymWear
     let gymWearProd1 = {
         id: 1,
         name: "Gym Wear 1",
         price: 1000,
-        image: gymwear1
+        image: gymwear1,
+        type: "gymWear"
     }
     let gymWearProd2 = {
         id: 2,
         name: "Gym Wear 2",
         price: 2000,
-        image: gymwear2
+        image: gymwear2,
+        type: "gymWear"
     }
     let gymWearProd3 = {
         id: 3,
         name: "Gym Wear 3",
         price: 3000,
-        image: gymwear3
+        image: gymwear3,
+        type: "gymWear"
     }
     let gymWearProd4 = {
         id: 4,
         name: "Gym Wear 4",
         price: 4000,
-        image: gymwear4
+        image: gymwear4,
+        type: "gymWear"
     }
     let gymWearProd5 = {
         id: 5,
         name: "Gym Wear 5",
         price: 5000,
-        image: gymwear5
+        image: gymwear5,
+        type: "gymWear"
     }
-    const [gymWearProducts, setGymWearProducts] = useState([gymWearProd1, gymWearProd2, gymWearProd3, gymWearProd4, gymWearProd5,])
 
     //? workout GEAR
     let workoutGearProd1 = {
         id: 1,
         name: "Workout Gear 1",
         price: 1000,
-        image: gear1
+        image: gear1,
+        type: "workoutGear"
     }
     let workoutGearProd2 = {
         id: 2,
         name: "Workout Gear 2",
         price: 2000,
-        image: gear2
+        image: gear2,
+        type: "workoutGear"
     }
     let workoutGearProd3 = {
         id: 3,
         name: "Workout Gear 3",
         price: 3000,
-        image: gear3
+        image: gear3,
+        type: "workoutGear"
     }
     let workoutGearProd4 = {
         id: 4,
         name: "Workout Gear 4",
         price: 4000,
-        image: gear4
+        image: gear4,
+        type: "workoutGear"
     }
     let workoutGearProd5 = {
         id: 5,
         name: "Workout Gear 5",
         price: 5000,
-        image: gear5
+        image: gear5,
+        type: "workoutGear"
     }
-    const [workoutGearProducts, setWorkoutGearProducts] = useState([workoutGearProd1, workoutGearProd2, workoutGearProd3, workoutGearProd4, workoutGearProd5,])
 
 
 
 
     // !!!!!
     const [allProducts, setAllProducts] = useState([
-        proteinProducts,
-        energyProducts,
-        healthProducts,
-        snacksProducts,
-        gymWearProducts,
-        workoutGearProducts,
+        proteinProd1,
+        proteinProd2,
+        proteinProd3,
+        proteinProd4,
+        proteinProd5,
+        energyProd1,
+        energyProd2,
+        energyProd3,
+        energyProd4,
+        energyProd5,
+        healthProd1,
+        healthProd2,
+        healthProd3,
+        healthProd4,
+        healthProd5,
+        snacksProd1,
+        snacksProd2,
+        snacksProd3,
+        snacksProd4,
+        snacksProd5,
+        gymWearProd1,
+        gymWearProd2,
+        gymWearProd3,
+        gymWearProd4,
+        gymWearProd5,
+        workoutGearProd1,
+        workoutGearProd2,
+        workoutGearProd3,
+        workoutGearProd4,
+        workoutGearProd5,
     ])
 
-    const [newProd,setNewProd] = useState([
-        proteinProd2,healthProd3,energyProd4,snacksProd3
+    const [newProd, setNewProd] = useState([
+        proteinProd2, healthProd3, energyProd4, snacksProd3
     ])
-    const [onSales,setOnSales] = useState([
-        proteinProd1,proteinProd3,energyProd5,workoutGearProd5
+    const [onSales, setOnSales] = useState([
+        proteinProd1, proteinProd3, energyProd5, workoutGearProd5
     ])
-    const [bestSeller,setBestSeller] = useState([
-        proteinProd5,healthProd1,energyProd5,snacksProd1
+    const [bestSeller, setBestSeller] = useState([
+        proteinProd5, healthProd1, energyProd5, snacksProd1
     ])
 
 
@@ -281,7 +329,7 @@ export const MyProvider = ({ children }) => {
 
     return (
         <>
-            <MyContext.Provider value={[allProducts, setAllProducts, proteinProducts,setProteinProducts,energyProducts,setEnergyProducts,healthProducts,setHealthProducts,snacksProducts,setSnacksProducts,gymWearProducts,setGymWearProducts,workoutGearProducts,setWorkoutGearProducts,newProd,setNewProd,onSales,setOnSales,bestSeller,setBestSeller,cart, setCart]}>
+            <MyContext.Provider value={[allProducts, setAllProducts, newProd, setNewProd, onSales, setOnSales, bestSeller, setBestSeller, cart, setCart]}>
                 {children}
             </MyContext.Provider>
         </>

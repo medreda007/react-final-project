@@ -63,7 +63,6 @@ export const FirstSection = () => {
                             <div className="bg-[#00000068] h-full w-full flex items-end justify-center">
                                 <Button className='bg-gray-50 text-gray-600 mb-5 rounded-none px-12 text-[14px] bg-opacity-95'>WORKOUT GEAR</Button>
                             </div>
-
                         </div>
                     </div>
                 </div>

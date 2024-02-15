@@ -3,6 +3,7 @@ import "../Home/home.scss"
 import { FirstSection } from './components/HomeFirstSection';
 import { HomeCarousel } from './components/HomeCarousel';
 import { HomeSecondSection } from './components/HomeSecondSection';
+import { HomeThirdSection } from './components/HomeThirdSection';
 
 
 
@@ -13,6 +14,7 @@ export const HomePage = () => {
             <HomeCarousel/>
             <FirstSection/>
             <HomeSecondSection/>
+            <HomeThirdSection/>
         </>
     );
 }

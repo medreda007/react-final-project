@@ -1,0 +1,118 @@
+.carousel-wrapper {
+    position: relative;
+    height: 75vh;
+    margin: auto;
+}
+
+.carousel-wrapper .carousel-item {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px 50px;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    border-radius: 10px;
+}
+
+.carousel-wrapper [id^="target-item"] {
+    display: none;
+}
+
+.carousel-wrapper *:target~.item-1 {
+    opacity: 0;
+}
+
+.carousel-wrapper #target-item-1:target~.item-1 {
+    opacity: 1;
+}
+
+.carousel-wrapper #target-item-2:target~.item-2,
+.carousel-wrapper #target-item-3:target~.item-3,
+.carousel-wrapper #target-item-4:target~.item-4,
+.carousel-wrapper #target-item-5:target~.item-5 {
+    z-index: 3;
+    opacity: 1;
+}
+
+.carousel-wrapper img {
+    max-width: 100%;
+}
+
+
+.carousel-wrapper .carousel-item .arrow {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 50px;
+    height: 100%;
+    -webkit-tap-highlight-color: transparent;
+    background: url("../../../assets/img/navigation-arrow-arrows-direction-right-icon-icon-256x205-mr86of5b.png") 50% 50%/30px no-repeat;
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Adding a transition for opacity */
+}
+
+.carousel-wrapper:hover .arrow { /* Targeting arrows within .carousel-wrapper on hover */
+    opacity: 1; /* Change opacity to 100% on hover */
+    transition: opacity 1s ease; /* Adding a transition for opacity */
+}
+
+.carousel-wrapper .carousel-item .arrow.arrow-prev {
+    right: 10px;
+}
+
+.carousel-wrapper .carousel-item .arrow.arrow-next {
+    left: 10px;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+
+@media (max-width: 480px) {
+
+    .carousel-wrapper .carousel-item .arrow,
+    .carousel-wrapper .carousel-item.light .arrow {
+        background-size: 75%;
+        background-position: 10px 50%;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .carousel-wrapper {
+        width: 100%;
+    }
+}
+
+
+.carousel-wrapper .item-1 {
+    z-index: 2;
+    opacity: 1;
+    background: url("../../../assets/img/360_F_168424497_Jx54f2sJuyaBUuNds69LD4NKkr42qRR0.jpg") no-repeat scroll 100%;
+    background-position: center ;
+    background-size: cover;
+}
+
+.carousel-wrapper .item-2 {
+    background: url("../../../assets/img/c4-original-30-servings-180g-cellucor.webp") no-repeat scroll 100%;
+    background-position: center ;
+    background-size: cover;
+}
+
+.carousel-wrapper .item-3 {
+    background: url("../../../assets/img/EverydayHoldallMLightGreyI3A2H-GBCM49_640x.webp") no-repeat scroll 100%;
+    background-position: center ;
+    background-size: cover;
+}
+
+.carousel-wrapper .item-4 {
+    background: url("../../../assets/img/InterlockTech6ShortsGSBlackA5A6L-BB2J0575_4d02f776-14ad-412d-91de-9e59707673b4_640x.webp") no-repeat scroll 100%;
+    background-position: center ;
+    background-size: cover;
+}
+
+.carousel-wrapper .item-5 {
+    background: url("../../../assets/img/588821_Legendary_Foods_Protein_Sweet_Roll_Cinnamon_case_Front.jpg") no-repeat scroll 100%;
+    background-position: center ;
+    background-size: cover;
+}
