@@ -24,11 +24,11 @@ const Header = () => {
                     <Link className='mt-2' to={"/"} active>
                         Home
                     </Link>
+                    <Link className='mt-2' to={"/Shop"}>Shop</Link>
+                    <Link className='mt-2' href="">Pricing</Link>
                     <Link className='mt-2' as={Link} to={"/About"}>
                         About
                     </Link>
-                    <Link className='mt-2' href="#">Services</Link>
-                    <Link className='mt-2' href="">Pricing</Link>
                     <Link className='mt-2' to={'/Contact'}>Contact</Link>
                     <div className="navbar-end">
                         <Navbar.Link href="#"><img src={profilImg} className='h-8 mt-1' alt="" /></Navbar.Link>
