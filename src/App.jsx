@@ -8,6 +8,9 @@ import { Contact } from './pages/contact/contact';
 import { About } from './pages/about/about';
 import { Shop } from './pages/Shop/Shop';
 import { Cart } from './pages/cart/Cart';
+import { Products } from './pages/products/Products';
+import { Account } from './pages/account/Account';
+import { SignUp } from './pages/SignUp/SignUp';
 
 
 function App() {
@@ -20,6 +23,10 @@ function App() {
         <Route path='/About' element={<About/>} />
         <Route path='/Shop' element={<Shop />} />
         <Route path='/Cart' element={<Cart/>} />
+        <Route path='/Products' element={<Products/>} />
+        <Route path='/Products/:product' element={<Products/>} />
+        <Route path='/Account' element={<Account/>} />
+        <Route path='/SignUp' element={<SignUp/>} />
       </Routes >
       <TheFooter />
     </MyProvider>

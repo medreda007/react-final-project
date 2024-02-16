@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import bannerImg from "../../../assets/img/workout-supplements-that-work_lead.avif";
 import { MyContext } from '../../../utils/contextProvider';
 import {
-    
+    Button,
     DialogHeader,
     Dialog,
     DialogBody,
@@ -13,10 +13,11 @@ import {
     CardFooter,
 } from "@material-tailwind/react";
 
-import { Button, Card, Label, Radio } from 'flowbite-react';
+import { Card, Label, Radio } from 'flowbite-react';
+import { useNavigate } from 'react-router-dom';
 
 export const ShopFirstSection = () => {
-    
+
     const [allProducts, setAllProducts, newProd, setNewProd, onSales, setOnSales, bestSeller, setBestSeller, cart, setCart] = useContext(MyContext)
 
     const [size, setSize] = useState(null);
@@ -74,6 +75,9 @@ export const ShopFirstSection = () => {
         handleOpen("xs")
     }
 
+
+    const navigate = useNavigate()
+
     return (
         <>
             <div className="bg-blue-gray-300 h-[35vh]" style={{ backgroundImage: `url(${bannerImg})`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover" }}>
@@ -82,14 +86,16 @@ export const ShopFirstSection = () => {
             <div className="flex p-7 gap-7 lg:flex-row flex-col">
                 <div className="lg:w-[25vw]">
                     <div className="flex flex-col lg:items-center lg:ps-0 ps-10 pt-10 gap-y-16">
-                        <div className="flex flex-col lg:me-8 lg:py-4 w-40 lg:gap-0 gap-5">
-                            <h1 className='pb-4 font-semibold text-xl'>Categories</h1>
-                            <button onClick={() => { showProduct("protein") }} className='w-fit'>Protein</button>
-                            <button onClick={() => { showProduct("energy") }} className='w-fit'>Energy boosters</button>
-                            <button onClick={() => { showProduct("health") }} className='w-fit'>Health and wellness</button>
-                            <button onClick={() => { showProduct("snacks") }} className='w-fit'>Snacks</button>
-                            <button onClick={() => { showProduct("gymWear") }} className='w-fit'>Gym Wear</button>
-                            <button onClick={() => { showProduct("workoutGear") }} className='w-fit'>Workout Gear</button>
+                        <div className="flex flex-col lg:me-8 lg:py-4 w-40 lg:gap-0 gap-5 ">
+                            <h1 className='pb-4 font-semibold text-xl '>Categories</h1>
+                            <div className="flex flex-col gap-y-5">
+                                <button onClick={() => { showProduct("protein") }} className='w-fit'>Protein</button>
+                                <button onClick={() => { showProduct("energy") }} className='w-fit'>Energy boosters</button>
+                                <button onClick={() => { showProduct("health") }} className='w-fit'>Health and wellness</button>
+                                <button onClick={() => { showProduct("snacks") }} className='w-fit'>Snacks</button>
+                                <button onClick={() => { showProduct("gymWear") }} className='w-fit'>Gym Wear</button>
+                                <button onClick={() => { showProduct("workoutGear") }} className='w-fit'>Workout Gear</button>
+                            </div>
                         </div>
                         <div className="flex flex-col lg:me-8 lg:py-4 w-40 lg:gap-0 gap-5">
                             <h1 className='pb-4 font-semibold text-xl'>Price</h1>
@@ -109,14 +115,14 @@ export const ShopFirstSection = () => {
                         <div className="flex" key={index}>
                             <Card className="w-80 h-96">
                                 <CardHeader shadow={false} floated={false} className="h-96">
-                                    <div className="h-full w-full object-cover" style={{ backgroundImage: `url(${item.image})`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "contain" }}></div>
+                                    <div onClick={() => navigate(`/Products/${item.name}`)} className="h-full w-full object-cover cursor-pointer" style={{ backgroundImage: `url(${item.image})`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "contain" }}></div>
                                 </CardHeader>
                                 <CardBody>
                                     <div className="mb-2 flex items-center justify-between">
-                                        <Typography color="blue-gray" className="font-medium">
+                                        <Typography onClick={() => navigate(`/Products/${item.name}`)} color="blue-gray" className="font-medium cursor-pointer">
                                             {item.name}
                                         </Typography>
-                                        <Typography color="blue-gray" className="font-medium">
+                                        <Typography onClick={() => navigate(`/Products/${item.name}`)} color="blue-gray" className="font-medium cursor-pointer">
                                             {item.price}
                                         </Typography>
                                     </div>

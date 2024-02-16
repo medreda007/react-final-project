@@ -1,7 +1,8 @@
 .carousel-wrapper {
     position: relative;
-    height: 75vh;
+    height: 80vh;
     margin: auto;
+    margin-top: 45px;
 }
 
 .carousel-wrapper .carousel-item {
@@ -13,7 +14,6 @@
     padding: 25px 50px;
     opacity: 0;
     transition: all 0.5s ease-in-out;
-    border-radius: 10px;
 }
 
 .carousel-wrapper [id^="target-item"] {
@@ -88,31 +88,19 @@
 .carousel-wrapper .item-1 {
     z-index: 2;
     opacity: 1;
-    background: url("../../../assets/img/360_F_168424497_Jx54f2sJuyaBUuNds69LD4NKkr42qRR0.jpg") no-repeat scroll 100%;
+    background: url("../../../assets/img/istockphoto-1189875436-612x612.jpg") no-repeat scroll 100%;
     background-position: center ;
-    background-size: cover;
+    background-size: 100%;
 }
 
 .carousel-wrapper .item-2 {
-    background: url("../../../assets/img/c4-original-30-servings-180g-cellucor.webp") no-repeat scroll 100%;
-    background-position: center ;
-    background-size: cover;
+    background: url("../../../assets/img/best_supplements_for_muscle_growth.jpeg.webp") no-repeat scroll 100%;
+    background-position: center;
+    background-size: 100%;
 }
 
 .carousel-wrapper .item-3 {
-    background: url("../../../assets/img/EverydayHoldallMLightGreyI3A2H-GBCM49_640x.webp") no-repeat scroll 100%;
-    background-position: center ;
-    background-size: cover;
-}
-
-.carousel-wrapper .item-4 {
-    background: url("../../../assets/img/InterlockTech6ShortsGSBlackA5A6L-BB2J0575_4d02f776-14ad-412d-91de-9e59707673b4_640x.webp") no-repeat scroll 100%;
-    background-position: center ;
-    background-size: cover;
-}
-
-.carousel-wrapper .item-5 {
-    background: url("../../../assets/img/588821_Legendary_Foods_Protein_Sweet_Roll_Cinnamon_case_Front.jpg") no-repeat scroll 100%;
-    background-position: center ;
-    background-size: cover;
+    background: url("../../../assets/img/GettyImages-585905915-57bda52a5f9b58cdfdbb873f.jpg") no-repeat scroll 100%;
+    background-position: top;
+    background-size: 100%;
 }

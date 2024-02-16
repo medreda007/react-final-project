@@ -14,6 +14,9 @@ import {
     DialogBody,
     DialogFooter,
 } from "@material-tailwind/react";
+import { useNavigate } from 'react-router-dom';
+
+import grafitti from "../../../assets/img/seamless-background-fitness-theme-graffiti-style-seamless-background-fitness-theme-graffiti-style-barbells-137876077.webp"
 
 
 export const HomeSecondSection = () => {
@@ -49,6 +52,40 @@ export const HomeSecondSection = () => {
         }
         handleOpen("xs")
     }
+
+
+    const navigate = useNavigate()
+
+
+    let advice = [
+        {
+            advice:"Start Slowly and Progress Gradually:",
+            desc:"It's essential to begin with light weights and low-intensity exercises to allow your body to adapt and prevent injuries. Gradually increase the weight or intensity as you become more comfortable and stronger."
+        },
+        {
+            advice:"Don't Compare Yourself to Others:",
+            desc:"Everyone's fitness journey is unique, and progress varies from person to person. Avoid comparing yourself to others in the gym. Focus on your own goals, celebrate your achievements, and stay motivated by your own progress."
+        },
+        {
+            advice:"Consistency is Key:",
+            desc:"Consistency is more important than intensity when it comes to achieving fitness goals. Aim for regular workouts, even if they're shorter or less intense. Establishing a routine will help you stay on track and see progress over time."
+        },
+        {
+            advice:"Listen to Your Body:",
+            desc:"Pay attention to how your body feels during and after workouts. If you experience pain beyond normal muscle soreness, it's a sign to stop and reassess your approach. Rest when needed, and don't push yourself too hard too quickly."
+        },
+        {
+            advice:"Focus on Proper Form:",
+            desc:"Proper form is crucial for maximizing results and preventing injuries. Take the time to learn the correct form for each exercise. Consider working with a personal trainer, at least initially, to ensure you're performing exercises correctly."
+        },
+    ]
+
+    function getRandomInt2(max) {
+        return Math.floor(Math.random() * max);
+    }
+    let theRandomadvice = advice[getRandomInt(5)]
+
+
     return (
         <>
             <section className="flex justify-center pt-5">
@@ -57,14 +94,14 @@ export const HomeSecondSection = () => {
                         <div className="flex lg:flex-row flex-col gap-3 justify-center items-center">
                             {
                                 newProd.map((item, index) => (
-                                    <div className="flex ">
+                                    <div  className="flex ">
                                         <Card className="w-80 h-96">
                                             <CardHeader shadow={false} floated={false} className="h-96">
-                                                <div className="h-full w-full object-cover" style={{ backgroundImage: `url(${item.image})`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "contain" }}></div>
+                                                <div onClick={() => navigate(`/Products/${item.name}`)} className="cursor-pointer h-full w-full object-cover" style={{ backgroundImage: `url(${item.image})`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "contain" }}></div>
                                             </CardHeader>
                                             <CardBody>
                                                 <div className="mb-2 flex items-center justify-between">
-                                                    <Typography color="blue-gray" className="font-medium">
+                                                    <Typography onClick={() => navigate(`/Products/${item.name}`)} color="blue-gray" className="cursor-pointer font-medium">
                                                         {item.name}
                                                     </Typography>
                                                     <Typography color="blue-gray" className="font-medium">
@@ -182,15 +219,20 @@ export const HomeSecondSection = () => {
 
                 </Tabs>
             </section>
-            <section className="flex  justify-center p-5 bg-brown-50">
+            <section className="flex  justify-center p-5 bg-brown-50 py-10 my-8 ">
                 <div className="w-[75vw] flex lg:flex-row justify-center items-center flex-col gap-5">
-                    <div className="lg:w-1/2 w-[90vw] bg-blue-gray-300 h-96" style={{}}>
+                    <div className="lg:w-1/2 w-[90vw] bg-blue-gray-300 h-96" style={{ backgroundImage: `url(${grafitti})`, backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
+                        <div className="h-full text-center w-full text-white font-serif font-extrabold flex justify-center items-center text-5xl bg-[#00000080]">
+                            Advice Of The Day
+                        </div>
                     </div>
                     <div className="lg:w-1/2 w-[90vw] bg-white h-96 flex flex-col items-center pt-3">
-                        <div className="h-[68%] w-[68%]" style={{ backgroundImage: `url(${theRandomProd.image})`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
+                        {/* <div className="h-[68%] w-[68%]" style={{ backgroundImage: `url(${theRandomProd.image})`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div> */}
                         <div className="flex flex-col justify-center items-center mt-7">
-                            <p className='text-lg'>{theRandomProd.name} uygug iukhi</p>
-                            <span className=''>${theRandomProd.price}</span>
+                            <h1 className='text-4xl text-center font-semibold'>{theRandomadvice.advice}</h1>
+                            {/* <p className='text-lg'>{theRandomProd.name} uygug iukhi</p> */}
+                            {/* <span className=''>${theRandomProd.price}</span> */}
+                            <p className='pt-10 px-5 font-semibold text-gray-600'>{theRandomadvice.desc}</p>
                         </div>
                     </div>
                 </div>

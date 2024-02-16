@@ -25,6 +25,7 @@ export const CartFirstSection = () => {
         });
     }
 
+
     const TotalPrice = (index) => {
         return cart[index].price * cart[index].quantity
     }
@@ -32,10 +33,18 @@ export const CartFirstSection = () => {
     const deleteProd = (index) => {
         setCart(prevCart => {
             const updatedCart = [...prevCart];
+            updatedCart[index].quantity = 0;
             updatedCart.splice(index, 1);
             return updatedCart;
         });
     }
+
+    const checkoutCart = () => {
+        const total = cart.reduce((acc, item) => {
+            return acc + (item.price * item.quantity);
+        }, 0);
+        return total;
+    };
 
     return (
         <>
@@ -92,7 +101,7 @@ export const CartFirstSection = () => {
                     </div>
                     <div className="flex gap-x-5 text-xl py-9">
                         <p className='font-bold'>Subtotale:</p>
-                        <p>$80.00</p>
+                        <p>{checkoutCart()} $</p>
                     </div>
                     <Button className='bg-black w-full rounded-full py-4 text-[14px]'>PROCEED TO CHECK OUT</Button>
                 </div>
